@@ -1,21 +1,51 @@
 <?php
-    /* Basic template for ICSE Intranet project php files */
-    /**
-     * Created by PhpStorm.
-     * User: Silverio
-     * Date: 25/01/2017
-     * Time: 9:01
-     */
     require_once ('debug.php');
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
-    $db = 'info';
+    require_once ('insert.php');
+    function insertUserObject ($user, $message, $date){
+        try{
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $db = 'proyecto1';
+        $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+        
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO information (user, `message`, `date`)VALUES ('$user', '$message', '$date');";
+        $conn->exec($sql);
+        return true;
+        }catch(PDOException $e)
+        {
+        echo $sql . "
+        " . $e->getMessage();
+        return false;
+        }
+        $conn = null;
+        }
 
-    $conn = new mysqli($servername, $username, $password, $db);
+    function selectUserObject ($user, $message, $date){
+            try{
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $db = 'proyecto1';
+            $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
+            
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "SELECT * FROM information";
+            $result = $conn->query($sql);
+            $conn->exec($sql);
+            echo $result;
+            return true;
+            }catch(PDOException $e)
+            {
+            echo $sql . "
+            " . $e->getMessage();
+            return false;
+            }
+            $conn = null;
+            }
 
-    if ($conn->connect_error) {
-        $msg = "Connection failed: " . $conn->connect_error;
-        show_alert($msg, 'danger');
-    }
+    
+        
+        
 ?>
