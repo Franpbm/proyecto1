@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>asdfsdf
+    <head>
         <title></title>
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
