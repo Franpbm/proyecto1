@@ -63,7 +63,7 @@ const addZero = i => {
     return i;
 }
 
-const insert = () => {
+const postMessage = () => {
     let name = document.getElementById('name').value;
     let msg = document.getElementById('msg').value;
     let now = new Date();
@@ -100,3 +100,24 @@ window.onload = function(){
     select();
 }
 
+
+
+const insertUser = () => {
+    let name = document.getElementById('name').value;
+    let msg = document.getElementById('msg').value;
+    let now = new Date();
+    let date = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}%20${addZero(now.getHours())}:${addZero(now.getMinutes())}:${addZero(now.getSeconds())}`;
+    let data = `name=${name}&msg=${msg}&date=${date}`;
+
+    let ajx = new XMLHttpRequest();
+    ajx.onreadystatechange = () => {
+        if (ajx.readyState == 4 && ajx.status == 200) {
+            //document.getElementById("msg").innerHTML = ajx.responseText;
+            updateUI(JSON.parse(ajx.responseText));
+            //console.log(JSON.parse(ajx.responseText));
+        }
+    };
+    ajx.open("POST", "utilities/main.php", true);
+    ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajx.send(data);
+}
