@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: rgb(241, 241, 241);
+}
+
+.bg{
+    background: url("../img/background.jpg") no-repeat center center;
+    background-size: cover;
+    height: 40vh;
+    border-bottom: 2px solid rgb(199, 199, 199);
+}
+
+.fas{
+    width: 1em;
+    position: relative;
+    margin-right: 4px;
+    top: 1px;
+}
+
+/* Panels */
+.section-panels{
+    margin: 1em auto;
+}
+
+.panel-info{
+    font-size: 1em;
+}
+
+.img-thumbnail{
+    width: 8em;
+}
+
+.section-nav{
+    border-bottom: 2px solid rgb(212, 210, 210);
+}
+
+
+.section-nav .active{
+    border-bottom: 2px solid rgb(47, 113, 255);
+}
+
+.section-nav .nav-link{
+    transition: all .2s;  
+}
+
+.section-nav .nav-link:hover{
+    border-bottom: 2px solid rgb(47, 113, 255);
+}
+
+/* Form */
+.form{
+    background-color: rgb(218, 228, 238);
+    border-bottom: 2px solid rgb(212, 210, 210);
+}
+
+/* Tweets */
+.tweet{
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(212, 210, 210);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 550px){
+    .section-panels{
+        text-align: center;
+    }
+    
+    .tweet{
+        text-align: center;
+    }
+}
+
+.tweet-header-name{
+    color: rgb(68, 68, 68);
+}
+
+.tweet-header-date{
+    color: rgb(68, 68, 68);
+}
+
+.tweet:hover{
+    background-color: rgb(218, 228, 238);
+}
+
+.rounded-cir{
+    margin: 0 auto;
+    border-radius: 50%;
+    padding: .5em;
+    width: 6em;
+}
+
+.button-comment{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    padding-right: 1em;
+}
+
+.button-retweet{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    padding-right: 1em;
+}
+
+.button-love{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+}
+
+.button-comment:hover{
+    color: rgb(0, 96, 223);
+}
+
+.button-retweet:hover{
+    color: rgb(0, 201, 27);
+}
+
+.button-love:hover{
+    color: rgb(223, 15, 0);
+}
+
+/* Footer */
+
+footer.page-footer{
+    color: whitesmoke;
+    background-color: hsl(219, 83%, 53%);
+}
+
+footer a{
+    color: white;
+}
+
