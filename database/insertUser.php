@@ -1,6 +1,6 @@
 <?php
 
-function insert($name, $msg, $date){
+function insertUser($name, $surname, $username, $birthdate, $password, $passwordVerificate, $email){
     $servername = "localhost";
     $username = "root";
     $password = "root";

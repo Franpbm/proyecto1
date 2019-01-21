@@ -10,5 +10,5 @@
     $email = $_POST['email'] ?? '';
 
     
-    insert($name, $surname, $username, $birthdate, $password, $passwordVerificate, $email);
+    insertUser($name, $surname, $username, $birthdate, $password, $passwordVerificate, $email);
 ?>
