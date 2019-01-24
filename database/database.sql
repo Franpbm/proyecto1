@@ -15,8 +15,8 @@ CREATE TABLE `message`(
     message_id int(11),
     name varchar(20) NOT NULL,
     msg varchar(250) NOT NULL,
-    datetime datetime NOT NULL,
-    FOREIGN KEY (message_id) REFERENCES `user`(id) ON UPDATE CASCADE
+    timestamp datetime NOT NULL,
+    FOREIGN KEY (message_id) REFERENCES `user` (id) ON UPDATE CASCADE
 );
 
 INSERT INTO test (name, msg, datetime) VALUES 
