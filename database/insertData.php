@@ -1,12 +1,14 @@
 <?php
 
 function insert($name, $msg, $date){
+    //print_r($_SESSION);
     $servername = "localhost";
     $username = "root";
     $password = "root";
     $dbname = "prueba";
     
     // Create connection
+    //$conn = new mysqli($servername, $username, $password);
     $conn = new mysqli($servername, $username);
     // Check connection
     if ($conn->connect_error) {

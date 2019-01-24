@@ -1,6 +1,7 @@
 <?php
 
 function showData(){
+    //print_r($_SESSION);
     $servername = "localhost";
     $username = "root";
     $password = "root";
@@ -8,6 +9,7 @@ function showData(){
 
 // Create connection
 $conn = new mysqli($servername, $username);
+//$conn = new mysqli($servername, $username, $password);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -22,6 +24,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->set_charset("utf8");
+$aux = $_SESSION['name'];
 
 $sql = "SELECT name, msg, datetime FROM test ORDER BY datetime DESC";
 $result = $conn->query($sql);

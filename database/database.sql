@@ -18,10 +18,9 @@ INSERT INTO info.`user` VALUES (
 CREATE TABLE info.`message`(
     id int(11) PRIMARY KEY AUTO_INCREMENT,
     userId int(11),
-    name varchar(20) NOT NULL,
     msg varchar(250) NOT NULL,
     timestamp datetime NOT NULL,
-    FOREIGN KEY (userId) REFERENCES `user` (id) ON UPDATE CASCADE
+    FOREIGN KEY (userId) REFERENCES `user`(id) ON UPDATE CASCADE
 );
 
 INSERT INTO info.`message` VALUES 

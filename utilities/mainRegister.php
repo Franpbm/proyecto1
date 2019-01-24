@@ -1,6 +1,9 @@
 <?php
+
+session_start();
     require_once('../database/registerUser.php');
     
+
     $name = $_POST['name'] ?? '';
     $surname = $_POST['surname'] ?? '';
     $username = $_POST['username'] ?? '';

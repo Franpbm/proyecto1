@@ -2,7 +2,6 @@ const panel = document.getElementById('tweets');
 const registeredUsers = ["pedrito", "juan", "maria"];
 
 const checkUser = (user) => {
-    console.log(user);
     return registeredUsers.includes(user) ? true : false;
 }
 
