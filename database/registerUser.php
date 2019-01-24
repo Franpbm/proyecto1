@@ -4,7 +4,7 @@ function insertUser($name, $surname, $username, $birthdate, $password, $password
     $servername = "localhost";
     $username = "root";
     $password = "root";
-    $dbname = "prueba";
+    $dbname = "info";
     
     // Create connection
     $conn = new mysqli($servername, $username);
@@ -21,7 +21,7 @@ function insertUser($name, $surname, $username, $birthdate, $password, $password
         //echo "Error accessing database: " . $conn->error;
     }
     
-    $sql = "INSERT INTO user (name, surnames, username, birthdate, password, passwordVerificate, email) VALUES ('" . $name . "', '" . $surname . "', '" . $username . "', '" . $birthdate . "', '" . $password . "', '" . $passwordVerificator . "', '" . $email . "')";
+    $sql = "INSERT INTO user (name, surnames, username, birthdate, password, passwordVerificate, email) VALUES ('" . $name . "', '" . $surname . "', '" . $username . "', '" . $birthdate . "', '" . $password . "', '" . $email . "')";
     
     if ($conn->query($sql) === TRUE) {
         //echo "New record created successfully";
