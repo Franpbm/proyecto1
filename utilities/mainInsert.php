@@ -1,6 +1,6 @@
 <?php
-    require_once('../database/insert.php');
-    require_once('../database/select.php');
+    require_once('../database/insertData.php');
+    require_once('../database/showData.php');
     
     $name = $_POST['name'] ?? '';
     $msg = $_POST['msg'] ?? '';

@@ -78,7 +78,7 @@ const postMessage = () => {
             //console.log(JSON.parse(ajx.responseText));
         }
     };
-    ajx.open("POST", "utilities/main.php", true);
+    ajx.open("POST", "utilities/mainInsert.php", true);
     ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajx.send(data);
 }
@@ -91,7 +91,7 @@ const select = () => {
             updateUI(JSON.parse(ajx.responseText));
         }
     };
-    ajx.open("POST", "utilities/main2.php", true);
+    ajx.open("POST", "utilities/mainShow.php", true);
     ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajx.send(data);
 }
@@ -117,7 +117,7 @@ const insertUser = () => {
             //console.log(JSON.parse(ajx.responseText));
         }
     };
-    ajx.open("POST", "utilities/main.php", true);
+    ajx.open("POST", "utilities/registerUser.php", true);
     ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajx.send(data);
 }

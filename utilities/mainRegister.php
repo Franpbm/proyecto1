@@ -1,5 +1,5 @@
 <?php
-    require_once('../database/insertUser.php');
+    require_once('../database/registerUser.php');
     
     $name = $_POST['name'] ?? '';
     $surname = $_POST['surname'] ?? '';
