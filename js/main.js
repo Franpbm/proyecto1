@@ -83,28 +83,43 @@ const select = () => {
     ajx.send(data);
 }
 
+/*
 window.onload = function(){
     select();
 }
+*/
 
 
-
-const insertUser = () => {
-    let name = document.getElementById('name').value;
-    let msg = document.getElementById('msg').value;
-    let now = new Date();
-    let date = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()}%20${addZero(now.getHours())}:${addZero(now.getMinutes())}:${addZero(now.getSeconds())}`;
-    let data = `name=${name}&msg=${msg}&date=${date}`;
+const login = () => {
+    let name = document.getElementById('defaultForm-email').value;
+    let pass = document.getElementById('defaultForm-pass').value;
+    let data = `name=${name}&pass=${pass}`;
 
     let ajx = new XMLHttpRequest();
     ajx.onreadystatechange = () => {
         if (ajx.readyState == 4 && ajx.status == 200) {
             //document.getElementById("msg").innerHTML = ajx.responseText;
             updateUI(JSON.parse(ajx.responseText));
-            //console.log(JSON.parse(ajx.responseText));
         }
     };
-    ajx.open("POST", "utilities/registerUser.php", true);
+    ajx.open("POST", "utilities/user.php", true);
+    ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajx.send(data);
+}
+
+const logout = () => {
+    let name = document.getElementById('defaultForm-email').value;
+    let pass = document.getElementById('defaultForm-pass').value;
+    let data = `name=${name}&pass=${pass}`;
+
+    let ajx = new XMLHttpRequest();
+    ajx.onreadystatechange = () => {
+        if (ajx.readyState == 4 && ajx.status == 200) {
+            //document.getElementById("msg").innerHTML = ajx.responseText;
+            //updateUI(JSON.parse(ajx.responseText));
+        }
+    };
+    ajx.open("POST", "utilities/logout.php", true);
     ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     ajx.send(data);
 }
