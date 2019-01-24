@@ -1,4 +1,4 @@
-CREATE DATABASE prueba;
+CREATE DATABASE info;
 
 CREATE TABLE `user` (
     id int(11) PRIMARY KEY AUTO_INCREMENT,
@@ -7,12 +7,11 @@ CREATE TABLE `user` (
     username varchar(20) NOT NULL,
     birthdate date NOT NULL,
     password varchar(100) NOT NULL,
-    passwordVerificate varchar(100) NOT NULL,
     email varchar(100) NOT NULL
 );
 
-CREATE TABLE `prueba.test`(
-	  id int(11) PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `message`(
+    id int(11) PRIMARY KEY AUTO_INCREMENT,
     message_id int(11),
     name varchar(20) NOT NULL,
     msg varchar(250) NOT NULL,
