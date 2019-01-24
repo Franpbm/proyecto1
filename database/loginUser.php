@@ -1,24 +1,25 @@
 <?php
 
 function check($user, $pass) {
+
     $dbusername = "root";
     $dbpassword = "root";
     $dbservername = "localhost";
     $dbname = "info";
 
     // Create connection
-    $conn = new mysqli($dbservername, $dbusername);
+    $conn = new mysqli($dbservername, $dbusername, $dbpassword);
+
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // select database
     $sql = "USE $dbname";
     if ($conn->query($sql) === TRUE) {
-    //echo "Database entered";
+        //echo "Database entered";
     } else {
-    //echo "Error accessing database: " . $conn->error;
+        //echo "Error accessing database: " . $conn->error;
     }
 
     $conn->set_charset("utf8");
@@ -28,9 +29,9 @@ function check($user, $pass) {
 
     if ($result->num_rows > 0) {
         return true;
-    // output data of each row
+        // output data of each row
     } else {
-    //echo "No results";
+        //echo "No results";
         return false;
     }
 

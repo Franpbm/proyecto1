@@ -39,7 +39,6 @@ body{
     border-bottom: 2px solid rgb(212, 210, 210);
 }
 
-
 .section-nav .active{
     border-bottom: 2px solid rgb(47, 113, 255);
 }
@@ -73,6 +72,10 @@ body{
     .tweet{
         text-align: center;
     }
+}
+
+#_msgpanel{
+    display: none;
 }
 
 .tweet-header-name{

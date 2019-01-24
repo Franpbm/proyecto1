@@ -2,14 +2,14 @@
 
 function showData(){
     //print_r($_SESSION);
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
+    $dbusername = "root";
+    $dbpassword = "root";
+    $dbservername = "localhost";
     $dbname = "info";
 
     // Create connection
-    $conn = new mysqli($servername, $username);
-    //$conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli($dbservername, $dbusername, $dbpassword);
+    //$conn = new mysqli($dbservername, $dbusername);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -24,9 +24,6 @@ function showData(){
     }
 
     $conn->set_charset("utf8");
-    $aux = $_SESSION['username'];
-
-    //$sql = "SELECT user.username, msg, timestamp FROM message INNER JOIN user ON message.userId = user.id WHERE user.username = '$aux' ORDER BY timestamp DESC";
     $sql = "SELECT user.username, msg, timestamp FROM message INNER JOIN user ON message.userId = user.id ORDER BY timestamp DESC";
     $result = $conn->query($sql);
     $final = array();

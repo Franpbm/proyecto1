@@ -2,14 +2,14 @@
 
 function post($msg, $date){
     //print_r($_SESSION);
-    $servername = "localhost";
-    $username = "root";
-    $password = "root";
+    $dbusername = "root";
+    $dbpassword = "root";
+    $dbservername = "localhost";
     $dbname = "info";
     
     // Create connection
-    //$conn = new mysqli($servername, $username, $password);
-    $conn = new mysqli($servername, $username);
+    $conn = new mysqli($dbservername, $dbusername, $dbpassword);
+    //$conn = new mysqli($servername, $username);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
