@@ -1,6 +1,6 @@
 <?php
 
-function insertUser($name, $surname, $username, $birthdate, $password, $passwordVerificate, $email){
+function registerUser($name, $surname, $username, $birthdate, $password, $email){
     $servername = "localhost";
     $username = "root";
     $password = "root";
