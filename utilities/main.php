@@ -29,7 +29,6 @@
         //compararlos a ver si existe
         if(check($username, $pass)){
             $_SESSION['username'] = $username;
-            //$_SESSION['password'] = $pass;
             //showData();
         } else {
             //echo "Datos erroneos";
@@ -42,18 +41,15 @@
         post($msg, $date);
         showData();
     }
-    
 
     if(isset($_POST['action']) && $_POST['action'] == 'show'){
         showData();
     }
 
     if(isset($_POST['action']) && $_POST['action'] == 'logout'){
-        //$_SESSION['username'] = 'juanaso';
         //echo print_r($_SESSION);
         unset($_SESSION['username']);
         //echo print_r($_SESSION);
-        
         session_destroy();
         //echo print_r($_SESSION);
     }
