@@ -20,7 +20,7 @@ function validate_surname($surname){
     }
 }
 
-function validate_name($username){
+function validate_username($username){
     if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
         return [false, "Name: Only letters and white space allowed"];
     } else if ($name > 40){
