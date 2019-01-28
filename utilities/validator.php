@@ -20,23 +20,21 @@ function validate_surname($surname){
     }
 }
 
-function validate_dni($dni){
-    if (!preg_match("/^[0-9]{8}[a-zA-Z]$/", $dni)) {
-        return [false, "DNI: Incorrect format"];
+function validate_name($username){
+    if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+        return [false, "Name: Only letters and white space allowed"];
+    } else if ($name > 40){
+        return [false, "Name: More than 40"];
     } else {
-        return [true, "DNI: CORRECT"];
+        return [true, "Name: CORRECT"];
     }
 }
 
-function validate_phone($phone){
-    if (!preg_match("/^[0-9]*$/", $phone)) {
-        return [false, "Phone: Only numbers allowed"];
-    } else if (strlen($phone) < 9){
-        return [false, "Phone: must contain more than 8 numbers"];
-    } else if (strlen($phone) > 12){
-        return [false, "Phone: must contain less than 12 numbers"];
+function validate_email($birthdate){
+    if (!preg_match("/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/", $birthdate)) {
+        return [false, "Email: Invalid email format"];
     } else {
-        return [true, "Phone: CORRECT"];
+        return [true, "Email: CORRECT"];
     }
 }
 
@@ -48,10 +46,10 @@ function validate_email($email){
     }
 }
 
-function validate_form($name, $surname1, $surname2, $dni, $phone, $email){
+function validate_form($name, $surname1, $username, $birthdate, $email){
     $errMsg = '';
 
-    if (!empty($name) && !empty($surname1) && !empty($surname2) && !empty($dni) && !empty($phone) && !empty($email)){
+    if (!empty($name) && !empty($surname) && !empty($username) && !empty($birthdate0) && !empty($email)){
         global $errMsg;
 
         $valName = validate_name($name);
@@ -59,24 +57,19 @@ function validate_form($name, $surname1, $surname2, $dni, $phone, $email){
             $errMsg .= "<p>" . $valName[1] . "</p>";
         }
 
-        $valSurname1 = validate_surname($surname1);
+        $valSurname1 = validate_surname($surname);
         if (!$valSurname1[0]){
-            $errMsg .= "<p>" . $valSurname1[1] . "</p>";
+            $errMsg .= "<p>" . $valSurname[1] . "</p>";
         }
 
-        $valSurname2 = validate_surname($surname2);
-        if (!$valSurname2[0]){
-            $errMsg .= "<p>" . $valSurname2[1] . "</p>";
+        $valusurname = validate_username($username);
+        if (!$valusername[0]){
+            $errMsg .= "<p>" . $valusername[1] . "</p>";
         }
 
-        $valDNI = validate_dni($dni);
-        if (!$valDNI[0]){
-            $errMsg .= "<p>" . $valDNI[1] . "</p>";
-        }
-        
-        $valPhone = validate_phone($phone);
-        if (!$valPhone[0]){
-            $errMsg .= "<p>" . $valPhone[1] . "</p>";
+        $valbirthdate = validate_birthdate($birthdate);
+        if (!$valbirthdate[0]){
+            $errMsg .= "<p>" . $valbirthdate[1] . "</p>";
         }
 
         $valEmail = validate_email($email);
