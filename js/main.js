@@ -87,6 +87,30 @@ window.onload = function(){
     showData();
 }
 
+const register = () => {
+    let name = document.getElementById('registerFormName').value;
+    let surname = document.getElementById('registerFormSurname').value;
+    let username = document.getElementById('registerFormUsername').value;
+    let birthdate = document.getElementById('registerFormBirthdate').value;
+    let password = document.getElementById('registerFormPassword').value;
+    let email = document.getElementById('registerFormEmail').value;
+
+    console.log(username, surname, username, birthdate, password, email);
+    let data = `name=${name}&surname=${surname}&username=${username}&birthdate=${birthdate}&password=${password}&email=${email}&action=register`;
+
+    let ajx = new XMLHttpRequest();
+    ajx.onreadystatechange = () => {
+        if (ajx.readyState == 4 && ajx.status == 200) {
+            //updateUI(JSON.parse(ajx.responseText.trim()));
+            console.log(ajx.responseText);
+            //document.getElementById('msgpanel').style.display = 'block';
+        }
+    };
+    ajx.open("POST", "utilities/main.php", true);
+    ajx.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajx.send(data);
+}
+
 const login = () => {
     let username = document.getElementById('loginFormUser').value;
     console.log(username);
@@ -99,7 +123,7 @@ const login = () => {
         if (ajx.readyState == 4 && ajx.status == 200) {
             //updateUI(JSON.parse(ajx.responseText.trim()));
             //console.log(ajx.responseText);
-            //document.getElementById('msgpanel').style.display = 'block';
+            document.getElementById('msgpanel').style.display = 'block';
         }
     };
     ajx.open("POST", "utilities/main.php", true);
@@ -115,7 +139,7 @@ const logout = () => {
         if (ajx.readyState == 4 && ajx.status == 200) {
             //updateUI(JSON.parse(ajx.responseText.trim()));
             //console.log(ajx.responseText);
-            //document.getElementById('msgpanel').style.display = 'hide';
+            document.getElementById('msgpanel').style.display = 'hide';
         }
     };
     ajx.open("POST", "utilities/main.php", true);

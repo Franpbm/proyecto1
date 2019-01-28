@@ -56,4 +56,5 @@ function post($msg, $date){
     
     $conn->close();
 }
+
 ?> 

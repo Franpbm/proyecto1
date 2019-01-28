@@ -1,7 +1,6 @@
 <?php
 
 function registerUser($name, $surname, $username, $birthdate, $password, $email){
-   
     $dbusername = "root";
     $dbpassword = "root";
     $dbservername = "localhost";
@@ -22,12 +21,12 @@ function registerUser($name, $surname, $username, $birthdate, $password, $email)
         //echo "Error accessing database: " . $conn->error;
     }
 
-    $sql = "INSERT INTO user (name, surnames, username, birthdate, password, passwordVerificate, email) VALUES ('" . $name . "', '" . $surname . "', '" . $username . "', '" . $birthdate . "', '" . $password . "', '" . $email . "')";
+    $sql = "INSERT INTO user (name, surnames, username, birthdate, password, email) VALUES ('$name', '$surname', '$username', '$birthdate', password('$password'), '$email');";
 
     if ($conn->query($sql) === TRUE) {
         //echo "New record created successfully";
     } else {
-        //echo "5Error: " . $sql . "<br>" . $conn->error;
+        //echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
     $conn->close();
