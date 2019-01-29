@@ -1,0 +1,48 @@
+
+img {
+    width: 100%;
+}
+
+@keyframes slideDown{
+    0%, 100% {transform: translateY(300px)};
+    10%, 90% {transform: translateY(0px)};
+}
+
+@-moz-keyframes slideDown{
+    0%, 100% {-moz-transform: translateY(300px)};
+    10%, 90% {-moz-transform: translateY(0px)};
+}
+
+@-webkit-keyframes slideDown{
+    0%, 100% {-webkit-transform: translateY(300px)};
+    10%, 90% {-webkit-transform: translateY(0px)};
+}
+
+.card{
+    right: 0;
+    top: 0;
+    position: absolute;
+    width: 300px;
+    overflow: hidden;
+
+    transform: translateY(300px);
+    -webkit-transform: translateY(300px);
+    -moz-transform: translateY(300px);
+    
+    animation: slideDown 2.5s 1.0s 1;
+    -webkit-animation: slideDown 2.5s 1.0s 1;
+    -moz-animation: slideDown 2.5s 1.0s 1;
+    
+}
+
+.card-body{
+    border-bottom: 3px solid black;
+    background-color: rgb(241, 241, 241);
+    margin: 0 ;
+    padding: 0;
+}
+
+.card-footer{
+    background-color:  rgb(47, 113, 255);
+    color: white;
+}
