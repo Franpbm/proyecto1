@@ -75,6 +75,7 @@ const showData = () => {
     ajx.onreadystatechange = () => {
         if (ajx.readyState == 4 && ajx.status == 200) {
             updateUI(JSON.parse(ajx.responseText));
+            //console.log(ajx.responseText);
             //console.log(JSON.parse(ajx.responseText));
         }
     };

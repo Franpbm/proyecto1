@@ -30,7 +30,7 @@ function validate_username($username){
     }
 }
 
-function validate_email($birthdate){
+function validate_birthdate($birthdate){
     if (!preg_match("/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/", $birthdate)) {
         return [false, "Email: Invalid email format"];
     } else {

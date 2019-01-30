@@ -7,11 +7,12 @@
     $dbservername = "localhost";
     $dbname = "info";
 
+    require_once('./validator.php');
     require_once('../database/loginUser.php');
     require_once('../database/registerUser.php');
     require_once('../database/postMessage.php');
     require_once('../database/showData.php');
-    require_once('./validator.php');
+    
 
     if(isset($_POST['action']) && $_POST['action'] == 'register'){
         $name = $_POST['name'] ?? '';
