@@ -61,7 +61,7 @@ const postMessage = () => {
         if (ajx.readyState == 4 && ajx.status == 200) {
             updateUI(JSON.parse(ajx.responseText.trim()));
             //console.log(JSON.parse(ajx.responseText));
-            //console.log(ajx.responseText);
+            console.log(ajx.responseText);
         }
     };
     ajx.open("POST", "utilities/main.php", true);
@@ -75,7 +75,7 @@ const showData = () => {
     ajx.onreadystatechange = () => {
         if (ajx.readyState == 4 && ajx.status == 200) {
             updateUI(JSON.parse(ajx.responseText));
-            //console.log(ajx.responseText);
+            console.log(ajx.responseText);
             //console.log(JSON.parse(ajx.responseText));
         }
     };
